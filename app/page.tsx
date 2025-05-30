@@ -33,7 +33,7 @@ export default function Home() {
   const subButtons = [
     {
       title: "Голосуем за реконструкцию парка",
-      link: "/parks",
+      link: "/voitings",
       icon: "Park.svg",
       delay: 0,
     },
@@ -57,8 +57,16 @@ export default function Home() {
     },
   ];
   return (
-    <section>
-      <div className="flex justify-between items-center mx-auto pt-120 max-w-3/4">
+    <section className="pt-40">
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+        className="pb-40 font-light text-center text-[64px]"
+      >
+        Ростов<span className="font-bold text-blue-500">Smart</span>
+      </motion.h1>
+      <div className="flex justify-between items-center mx-auto max-w-3/4">
         {data.map((card, i) => (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -94,7 +102,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: el.delay }}
-            className="flex justify-between items-center py-3 px-4 text-white bg-blue-500 rounded-2xl w-[300px] min-w-[300px]"
+            className="flex justify-between items-center py-3 px-4 text-white bg-blue-500 rounded-2xl hover:shadow-2xl w-[300px] min-w-[300px] hover:scale-[1.02]"
           >
             <img src={el.icon} />
             <Link href={el.link} className="w-2/3">
